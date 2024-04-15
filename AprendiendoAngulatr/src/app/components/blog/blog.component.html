@@ -1,0 +1,32 @@
+
+
+<app-slider 
+    [nombre]="'Blog'"
+    [size] = "'small'"
+></app-slider>
+
+<div class="center">
+    <section id="content">
+        <h2 class="subheader">Blog</h2>
+        <div id="articles">
+            <!-- Anadir articulos via JS -->
+        <article class="article-item" id="article-template" *ngFor=" let article of articles" >
+            <div class="image-wrap" >
+                {{article.image}}
+              <img src="{{url +'get-image/' + 'test'+article.image}}" alt="article.content" *ngIf="article.image"/>
+                <img src="assets/images/Blog.jpg" alt="article.content" *ngIf="!article.image"/>
+                je suis l'url {{article.image}}
+            </div>
+            <h2>{{article.content}}</h2>
+            <span class="date">
+                {{article.date}}
+            </span>
+            <a href="" >Leer mas</a>
+            <div class="clearfix"></div>
+        </article>
+    </div>
+    </section>
+
+    <app-sidebar></app-sidebar>
+
+</div>
